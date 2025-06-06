@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="productos-public-container">
+  <h2>Nuestros Productos</h2>
+
+  <div *ngIf="loading" class="loading-message">Cargando productos...</div>
+
+  <div *ngIf="errorMessage" class="message error">{{ errorMessage }}</div>
+
+  <div *ngIf="!loading && !errorMessage && products.length === 0" class="no-products-message">
+    No hay productos disponibles en este momento.
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let producto of products">
+      <img [src]="getImageUrl(producto.imagen_url)" alt="{{ producto.nombre }}" class="product-image">
+      <div class="product-details">
+        <h3>{{ producto.nombre }}</h3>
+        <p class="product-description" *ngIf="producto.descripcion">{{ producto.descripcion }}</p>
+        <p class="product-price">{{ producto.precio | currency:'USD':'symbol' }}</p>
+        <p class="product-stock">Stock: {{ producto.stock }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

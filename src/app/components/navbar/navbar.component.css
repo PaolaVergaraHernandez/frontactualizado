@@ -1,0 +1,22 @@
+/* Navbar background más claro */
+.custom-navbar {
+  background-color: #fdc01a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones modernos */
+.custom-btn {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.custom-btn:hover {
+  background-color: #375e16;
+  color: white;
+  border-color: #ffc107;
+}
+
+/* Logo tamaño responsivo opcional */
+.navbar-brand img {
+  height: 60px;
+}

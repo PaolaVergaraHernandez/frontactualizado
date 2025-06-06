@@ -1,0 +1,9 @@
+<div class="product-card">
+  <img [src]="getImageUrl(product.imagen_url)" alt="{{ product.nombre }}" class="product-image">
+  <div class="product-details">
+    <h3>{{ product.nombre }}</h3>
+    <p class="product-description" *ngIf="product.descripcion">{{ product.descripcion }}</p>
+    <p class="product-price">{{ product.precio | currency:'USD':'symbol' }}</p>
+    <p class="product-stock">Stock: {{ product.stock }}</p>
+  </div>
+</div>

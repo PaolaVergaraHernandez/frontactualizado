@@ -1,0 +1,149 @@
+<app-navbar></app-navbar>
+<div class="video-section">
+      <video autoplay muted loop playsinline class="background-video">
+        <source src="assets/primero.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+    
+      <div class="overlay">
+        <h3>MAXIMUM FAT BURN</h3>
+        <h1><span class="highlight">CARDIO</span></h1>
+        <p>
+          Welcome to the new standard in cardio, with specially curated workouts that
+          focus on all aspects of the body and overall health. At F45, we use plyometric
+          movements, combined with timing and tempo to blast both your aerobic and
+          anaerobic systems, delivering you the results you’re looking for.
+        </p>
+        <div class="buttons">
+          <button class="start">Start A Trial</button>
+          <button class="book">Book A Class</button>
+        </div>
+      </div>
+    </div>
+   <div class="container py-5">
+  <h2 class="display-4 fw-bold text-center mb-5">Nuestras clases disponibles.</h2>
+  <div class="row g-4 justify-content-center">
+
+    <!-- Hipertrofia -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card text-white bg-dark h-100 text-center">
+        <img src="assets/hipertrofia.png" class="card-img-top p-3" alt="Hipertrofia" />
+        <div class="card-body d-flex flex-column">
+          <span class="badge bg-warning mb-2">Hipertrofia</span>
+          <h5 class="card-title fw-bold">Crecimiento Muscular</h5>
+          <div class="mb-2">
+            <h6 class="text-secondary fw-bold mb-1">Descripción:</h6>
+            <p class="card-text small">Entrenamientos enfocados en aumentar el volumen muscular con cargas moderadas y repeticiones medias.</p>
+          </div>
+          <div class="mb-3">
+            <h6 class="text-secondary fw-bold mb-1">Horario:</h6>
+            <p class="card-text small">Lunes y Miércoles - 6:00 PM a 7:00 PM</p>
+          </div>
+          <a [routerLink]="['/formulario']" class="btn btn-light mt-auto fw-semibold">Seleccionar Clase</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cardio -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card text-white bg-dark h-100 text-center">
+        <img src="assets/cardio.png" class="card-img-top p-3" alt="Cardio" />
+        <div class="card-body d-flex flex-column">
+          <span class="badge bg-danger mb-2">Cardio</span>
+          <h5 class="card-title fw-bold">Redline</h5>
+          <div class="mb-2">
+            <h6 class="text-secondary fw-bold mb-1">Descripción:</h6>
+            <p class="card-text small">Sesiones intensas que mejoran la salud cardiovascular y queman grasa corporal rápidamente.</p>
+          </div>
+          <div class="mb-3">
+            <h6 class="text-secondary fw-bold mb-1">Horario:</h6>
+            <p class="card-text small">Martes y Jueves - 7:00 AM a 8:00 AM</p>
+          </div>
+          <a [routerLink]="['/formulario']" class="btn btn-light mt-auto fw-semibold">Seleccionar Clase</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Acondicionamiento -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card text-white bg-dark h-100 text-center">
+        <img src="assets/acondicionamiento.png" class="card-img-top p-3" alt="Acondicionamiento" />
+        <div class="card-body d-flex flex-column">
+          <span class="badge bg-success mb-2">Acondicionamiento</span>
+          <h5 class="card-title fw-bold">Funcional Total</h5>
+          <div class="mb-2">
+            <h6 class="text-secondary fw-bold mb-1">Descripción:</h6>
+            <p class="card-text small">Mejora tu capacidad general con rutinas que combinan fuerza, movilidad y cardio.</p>
+          </div>
+          <div class="mb-3">
+            <h6 class="text-secondary fw-bold mb-1">Horario:</h6>
+            <p class="card-text small">Viernes - 5:00 PM a 6:00 PM</p>
+          </div>
+          <a [routerLink]="['/formulario']" class="btn btn-light mt-auto fw-semibold">Seleccionar Clase</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fisicoculturismo -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card text-white bg-dark h-100 text-center">
+        <img src="assets/2.png" class="card-img-top p-3" alt="Fisicoculturismo" />
+        <div class="card-body d-flex flex-column">
+          <span class="badge bg-primary mb-2">Fisicoculturismo</span>
+          <h5 class="card-title fw-bold">Escultura Corporal</h5>
+          <div class="mb-2">
+            <h6 class="text-secondary fw-bold mb-1">Descripción:</h6>
+            <p class="card-text small">Trabajo detallado en grupos musculares con técnicas de volumen y simetría.</p>
+          </div>
+          <div class="mb-3">
+            <h6 class="text-secondary fw-bold mb-1">Horario:</h6>
+            <p class="card-text small">Lunes a Viernes - 8:00 PM a 9:00 PM</p>
+          </div>
+          <a [routerLink]="['/formulario']" class="btn btn-light mt-auto fw-semibold">Seleccionar Clase</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Potencia -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card text-white bg-dark h-100 text-center">
+        <img src="assets/1.png" class="card-img-top p-3" alt="Potencia" />
+        <div class="card-body d-flex flex-column">
+          <span class="badge bg-info mb-2">Potencia</span>
+          <h5 class="card-title fw-bold">Explosividad Total</h5>
+          <div class="mb-2">
+            <h6 class="text-secondary fw-bold mb-1">Descripción:</h6>
+            <p class="card-text small">Ejercicios explosivos con pesas y peso corporal para mejorar velocidad y fuerza.</p>
+          </div>
+          <div class="mb-3">
+            <h6 class="text-secondary fw-bold mb-1">Horario:</h6>
+            <p class="card-text small">Miércoles y Viernes - 6:00 AM a 7:00 AM</p>
+          </div>
+          <a [routerLink]="['/formulario']" class="btn btn-light mt-auto fw-semibold">Seleccionar Clase</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pesas para Mujeres -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card text-white bg-dark h-100 text-center">
+        <img src="assets/pesas.png" class="card-img-top p-3" alt="Pesas para Mujeres" />
+        <div class="card-body d-flex flex-column">
+          <span class="badge bg-pink mb-2">Pesas para Mujeres</span>
+          <h5 class="card-title fw-bold">Fuerza Femenina</h5>
+          <div class="mb-2">
+            <h6 class="text-secondary fw-bold mb-1">Descripción:</h6>
+            <p class="card-text small">Clases enfocadas en tonificar glúteos, piernas y abdomen, con progresión controlada.</p>
+          </div>
+          <div class="mb-3">
+            <h6 class="text-secondary fw-bold mb-1">Horario:</h6>
+            <p class="card-text small">Martes y Jueves - 6:00 PM a 7:00 PM</p>
+          </div>
+          <a [routerLink]="['/formulario']" class="btn btn-light mt-auto fw-semibold">Seleccionar Clase</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<app-carousel></app-carousel>
+<app-info-section></app-info-section>
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Conoce nuestros productos</h2>
+    <div class="row g-4 product-grid-home"> <div class="col-md-3" *ngFor="let product of displayProducts"> <app-product-card [product]="product"></app-product-card>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a routerLink="/productos" class="btn btn-outline-primary">Ver más productos</a>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,90 @@
+<div class="admin-productos-container">
+  <h2>Gestión de Productos</h2>
+
+  <div class="add-product-section card">
+    <h3>Añadir Nuevo Producto</h3>
+    <form (ngSubmit)="onAddProduct()" #productForm="ngForm">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="newProduct.nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" [(ngModel)]="newProduct.descripcion"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" [(ngModel)]="newProduct.precio" required>
+      </div>
+      <div class="form-group">
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" name="stock" [(ngModel)]="newProduct.stock" required>
+      </div>
+      <div class="form-group">
+        <label for="imagen_url">URL de Imagen:</label>
+        <input type="text" id="imagen_url" name="imagen_url" [(ngModel)]="newProduct.imagen_url">
+      </div>
+      <button type="submit" [disabled]="!productForm.valid" class="btn btn-primary">Añadir Producto</button>
+    </form>
+    <div *ngIf="addProductMessage" class="message success">{{ addProductMessage }}</div>
+    <div *ngIf="addProductError" class="message error">{{ addProductError }}</div>
+  </div>
+
+  <div class="edit-product-section card" *ngIf="editingProduct">
+    <h3>Editar Producto (ID: {{ editingProduct.id_producto }})</h3>
+    <form (ngSubmit)="onUpdateProduct()" #editForm="ngForm">
+      <div class="form-group">
+        <label for="editNombre">Nombre:</label>
+        <input type="text" id="editNombre" name="editNombre" [(ngModel)]="editingProduct.nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="editDescripcion">Descripción:</label>
+        <textarea id="editDescripcion" name="editDescripcion" [(ngModel)]="editingProduct.descripcion"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="editPrecio">Precio:</label>
+        <input type="number" id="editPrecio" name="editPrecio" [(ngModel)]="editingProduct.precio" required>
+      </div>
+      <div class="form-group">
+        <label for="editStock">Stock:</label>
+        <input type="number" id="editStock" name="editStock" [(ngModel)]="editingProduct.stock" required>
+      </div>
+      <div class="form-group">
+        <label for="editImagenUrl">URL de Imagen:</label>
+        <input type="text" id="editImagenUrl" name="editImagenUrl" [(ngModel)]="editingProduct.imagen_url">
+      </div>
+      <button type="submit" [disabled]="!editForm.valid" class="btn btn-primary">Guardar Cambios</button>
+      <button type="button" (click)="cancelEdit()" class="btn btn-secondary">Cancelar</button>
+    </form>
+    <div *ngIf="updateProductMessage" class="message success">{{ updateProductMessage }}</div>
+    <div *ngIf="updateProductError" class="message error">{{ updateProductError }}</div>
+  </div>
+
+  <div class="product-list-section card">
+    <h3>Productos Existentes</h3>
+    <div *ngIf="loading" class="loading-message">Cargando productos...</div>
+    <div *ngIf="errorLoadingProducts" class="message error">{{ errorLoadingProducts }}</div>
+
+    <ul *ngIf="productos.length > 0 && !loading && !errorLoadingProducts" class="product-list">
+      <li *ngFor="let producto of productos">
+        <div class="product-display">
+          <img *ngIf="producto.imagen_url" [src]="producto.imagen_url" alt="{{ producto.nombre }}" class="product-thumbnail">
+          <div class="product-info">
+            <p><strong>ID:</strong> {{ producto.id_producto }}</p>
+            <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+            <p *ngIf="producto.descripcion"><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+            <p><strong>Precio:</strong> {{ producto.precio | currency:'USD':'symbol' }}</p>
+            <p><strong>Stock:</strong> {{ producto.stock }}</p>
+            </div>
+        </div>
+        <div class="actions">
+          <button class="btn btn-edit" (click)="editProduct(producto)">Editar</button>
+          <button class="btn btn-delete" (click)="deleteProduct(producto.id_producto)">Eliminar</button>
+        </div>
+      </li>
+    </ul>
+    <div *ngIf="!loading && !errorLoadingProducts && productos.length === 0" class="no-products-message">
+      No hay productos disponibles. Añade uno usando el formulario de arriba.
+    </div>
+  </div>
+</div>

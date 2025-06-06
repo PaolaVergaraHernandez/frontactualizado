@@ -1,0 +1,44 @@
+/* src/styles.css o src/app/components/home/home.component.css */
+
+.info-button {
+  display: inline-block; /* Permite aplicar padding y margin */
+  margin-top: 20px; /* Espacio entre el texto y el botón */
+  padding: 10px 25px; /* Relleno interno del botón */
+  background-color: #007bff; /* Color de fondo azul (ej. Bootstrap primary) */
+  color: white; /* Color del texto blanco */
+  text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+  border-radius: 8px; /* Bordes redondeados */
+  font-weight: 600; /* Texto seminegrita */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Transiciones suaves */
+  border: none; /* Elimina cualquier borde por defecto */
+  cursor: pointer; /* Indica que es un elemento clicable */
+}
+
+.info-button:hover {
+  background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
+  transform: translateY(-2px); /* Pequeño efecto de "elevación" */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+}
+
+.info-button:active {
+  transform: translateY(0); /* Vuelve a la posición original al hacer clic */
+  box-shadow: none; /* Quita la sombra al hacer clic */
+}
+
+/* Opcional: Estilos para los íconos si los quieres más grandes o con color */
+.benefit-card i {
+  font-size: 3rem !important; /* Haz los íconos más grandes */
+  /* Puedes ajustar los colores si quieres que sean diferentes a los de Bootstrap */
+}
+
+/* Ajustes adicionales para la sección de beneficios si es necesario */
+.benefit-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el botón hacia abajo */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+.benefit-card h5 {
+    flex-grow: 1; /* Permite que el título ocupe espacio para alinear mejor los botones */
+}

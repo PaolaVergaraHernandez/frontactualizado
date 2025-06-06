@@ -1,0 +1,74 @@
+<div class="container py-5">
+  <h2>Checkout</h2>
+  <form #checkoutForm="ngForm">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label>Nombre completo</label>
+        <input type="text" class="form-control" name="nombre" ngModel required>
+      </div>
+      <div class="col-md-6">
+        <label>Teléfono</label>
+        <input type="tel" class="form-control" name="telefono" ngModel required>
+      </div>
+
+      <div class="col-12">
+        <label>Método de entrega</label>
+        <select class="form-select" [(ngModel)]="metodoEntrega" name="metodoEntrega" required>
+          <option value="">Selecciona...</option>
+          <option value="domicilio">Entrega a domicilio</option>
+          <option value="recoger">Recoger en Gym</option>
+        </select>
+      </div>
+
+      <!-- Mensaje de no disponible -->
+      <div *ngIf="metodoEntrega === 'domicilio'" class="col-12 mt-2">
+        <div class="alert alert-danger">
+          Entrega a domicilio no disponible por el momento.
+        </div>
+      </div>
+
+      <!-- Resto del formulario de entrega a domicilio (puedes ocultarlo si quieres) -->
+      <div *ngIf="metodoEntrega === 'domicilio'" class="mt-4">
+        <div class="col-12">
+          <label>Correo electrónico</label>
+          <input type="email" class="form-control" name="correo" ngModel>
+        </div>
+
+        <div class="col-md-6">
+          <label>Municipio</label>
+          <input type="text" class="form-control" name="municipio" ngModel>
+        </div>
+        <div class="col-md-6">
+          <label>Estado</label>
+          <input type="text" class="form-control" [(ngModel)]="estado" name="estado">
+        </div>
+
+        <div class="col-md-6">
+          <label>Calle</label>
+          <input type="text" class="form-control" name="calle" ngModel>
+        </div>
+        <div class="col-md-6">
+          <label>Fracc/Colonia</label>
+          <input type="text" class="form-control" name="colonia" ngModel>
+        </div>
+
+        <div class="col-md-6">
+          <label>Código Postal</label>
+          <input type="text" class="form-control" name="cp" ngModel>
+        </div>
+        <div class="col-md-6">
+          <label>Referencia del hogar (opcional)</label>
+          <input type="text" class="form-control" name="referencia" ngModel>
+        </div>
+
+        <div class="alert alert-warning mt-3" *ngIf="estado && estado.toLowerCase() !== 'durango'">
+          Envío con costo adicional por ser fuera de Durango.
+        </div>
+      </div>
+
+      <div class="text-end mt-4">
+        <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,33 @@
+<section class="formulario">
+    <h2>Formulario de Registro</h2>
+  
+    <form (ngSubmit)="enviarFormulario()">
+      <label>
+        Nombre:
+        <input type="text" [(ngModel)]="nombre" name="nombre" required>
+      </label>
+  
+      <label>
+        Correo:
+        <input type="email" [(ngModel)]="correo" name="correo" required>
+      </label>
+  
+      <label>
+        Número de Teléfono:
+        <input type="tel" [(ngModel)]="telefono" name="telefono" required>
+      </label>
+  
+      <label>
+        Método de Pago:
+        <select [(ngModel)]="metodoPago" name="metodoPago" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="tarjeta">Tarjeta de crédito/débito</option>
+          <option value="efectivo">Efectivo</option>
+          <option value="transferencia">Transferencia bancaria</option>
+        </select>
+      </label>
+  
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+  

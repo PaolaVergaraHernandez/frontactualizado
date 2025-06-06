@@ -1,0 +1,61 @@
+/* Copy relevant styles from productos.component.css here for .product-card */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  object-position: center center;
+}
+
+.product-details {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-details h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.3em;
+  line-height: 1.2;
+}
+
+.product-description {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.product-price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: auto;
+  margin-bottom: 5px;
+}
+
+.product-stock {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 0;
+}

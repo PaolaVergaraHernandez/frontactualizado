@@ -1,0 +1,136 @@
+src/app/components/productos/productos.component.css
+/*.productos-public-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}*/
+
+.loading-message,
+.error-message,
+.no-products-message {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1em;
+  color: #666;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-content: center; /* Centra las tarjetas si no llenan toda la fila */
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+}
+
+/* --- ESTILOS PARA LAS IMÁGENES DE PRODUCTOS (VISTA PÚBLICA) --- */
+.product-image {
+  width: 100%;
+  height: 200px; /* Altura fija para todas las imágenes del producto */
+  object-fit: cover; /* La imagen llenará el área, recortando si es necesario, manteniendo su aspecto */
+  display: block; /* Elimina espacio extra debajo de la imagen */
+  object-position: center center; /* (Opcional) Asegura que el centro de la imagen sea el punto focal, es el valor por defecto */
+}
+
+
+.product-details {
+  padding: 15px;
+  flex-grow: 1; /* Permite que el contenido se expanda y llene el espacio disponible */
+  display: flex;
+  flex-direction: column; /* Organiza el contenido de los detalles verticalmente */
+  justify-content: space-between; /* Empuja el precio/stock al final del flex-grow */
+}
+
+.product-details h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.3em;
+  line-height: 1.2;
+}
+
+.product-description {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  flex-grow: 1; /* Permite que la descripción ocupe espacio si es larga */
+  /* Opcional: Limitar líneas de la descripción si quieres un look más uniforme */
+  /*
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Muestra hasta 3 líneas */
+  /* -webkit-box-orient: vertical; */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+  
+}
+
+.product-price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #007bff; /* Color azul para el precio */
+  margin-top: auto; /* Empuja el precio y stock al final del flexbox */
+  margin-bottom: 5px;
+}
+
+.product-stock {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 0; /* Asegura que no haya margen inferior extra */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Tarjetas un poco más pequeñas en tablets */
+    gap: 20px;
+  }
+
+  .product-image {
+    height: 180px; /* Reduce un poco la altura de la imagen en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* Una sola columna en móviles muy pequeños */
+    gap: 15px;
+  }
+
+  .product-image {
+    height: 150px; /* Otra reducción de altura para móviles */
+  }
+
+  .product-details {
+    padding: 10px;
+  }
+
+  .product-details h3 {
+    font-size: 1.2em;
+  }
+}

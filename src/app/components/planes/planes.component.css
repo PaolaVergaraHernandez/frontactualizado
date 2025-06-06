@@ -1,0 +1,15 @@
+.card {
+    border: none;
+    border-radius: 1rem;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .carousel-inner img {
+    object-fit: cover;
+    height: 300px;
+  }
+  
